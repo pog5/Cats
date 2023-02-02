@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model ICollection<Cat>
+<h1>Fluffy Cats</h1>
+<ul>
+    @foreach (var cat in Model)
+    {
+        <li>
+            <a asp-action="Details" asp-controller="Cats" asp-route-id="@cat.Id">@cat.Name</a>
+        </li>
+    }
+</ul>
+<button><a asp-action="Add" asp-controller="Cats">Add Cat</a></button>
